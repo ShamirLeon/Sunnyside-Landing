@@ -1,0 +1,49 @@
+@use 'variables';
+
+.testimonials{
+    text-align: center;
+
+    &__title{
+        font-size: 1rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: variables.$Dark-grayish-blue;
+    }
+
+
+    &__container{
+        padding: 60px 0;
+        display: grid;
+        gap: 60px;
+
+        @media #{variables.$sm-laptop-device}{
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+    }
+
+    &__img{
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    &__paragraph{
+        color: variables.$Dark-grayish-blue;
+        line-height: 1.5;
+        margin: 1.5rem 0; 
+        @media #{variables.$sm-laptop-device}{
+           margin: 2.5rem 0;
+        }       
+    }
+
+    &__name{
+        color: variables.$Very-dark-desaturated-blue;
+        margin-bottom: .5rem;
+    }
+
+    &__role{
+        color: variables.$Grayish-blue;
+    }
+}

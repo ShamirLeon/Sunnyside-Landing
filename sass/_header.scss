@@ -1,0 +1,51 @@
+@use 'variables';
+
+.hero{
+    background-image: url(/images/mobile/image-header.jpg);
+    background-size: cover;
+    background-position: center;
+
+    @media #{variables.$sm-laptop-device}{
+        background-image: url(/images/desktop/image-header.jpg);
+    }
+
+    &__main{
+        height: 100vh;
+        color: variables.$White;
+        text-align: center;
+        letter-spacing: 5px;
+    }
+
+    &__title{
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+
+        @media #{variables.$sm-laptop-device}{
+            font-size: 3rem;
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__arrow{
+        filter: drop-shadow(0 0 10px black);
+        animation: move 1.5s linear infinite alternate;
+    }
+
+    &:target{
+        .nav__menu{
+            opacity: 1;
+            pointer-events: unset;
+        }
+    }
+}
+
+@keyframes move {
+    100%{
+       transform: translateY(30px); 
+    }
+}
+
+
+
+

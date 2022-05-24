@@ -1,0 +1,88 @@
+@use 'variables';
+
+.nav{
+    padding: 30px 0;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+
+    &__logo{
+        @media #{variables.$sm-laptop-device}{
+            width: 130%;
+        }
+    }
+
+    &__hamburguer{
+        @media #{variables.$sm-laptop-device}{
+            display: none;
+        }
+    }
+
+    &__menu{
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 90%;
+        margin: 0 auto;
+        padding: 2em 1em;
+        background-color: variables.$White;
+        display: grid;
+        gap: 1em;
+        opacity: 0;
+        pointer-events: none;
+        transition: .3s opacity;
+
+        &::before{
+            content: '';
+            position: absolute;
+            border-top: 20px solid transparent;
+            border-left: 20px solid transparent;
+            border-bottom: 20px solid white;
+            border-top: 20px solid transparent;
+            top: -40px;
+            right: 0;
+        }
+
+        @media #{variables.$sm-laptop-device}{
+           display: grid;
+           grid-auto-flow: column;
+           align-items: center;
+           justify-content: space-between;
+           gap: 2rem;
+           opacity: 1;      
+           background-color: transparent; 
+           top: 0;
+           position: unset;
+           pointer-events: unset; 
+           
+           
+           &::before{
+               display: none;
+           }
+       }
+    }
+
+    &__item{
+        text-decoration: none;
+        justify-self: center;
+        color: variables.$Dark-blue;
+        
+        &--active{
+            background-color: variables.$Yellow;
+            padding: 1em 1.5em;
+            border-radius: 2em;
+        }
+
+        @media #{variables.$sm-laptop-device}{
+            color: variables.$White;
+            &--active{
+                color: variables.$Dark-blue;
+                padding: 1em 1.5em;
+                background-color: variables.$White;
+                border-radius: 30px;
+            }
+        }
+    }
+}

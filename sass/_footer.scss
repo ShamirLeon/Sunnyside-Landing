@@ -1,0 +1,38 @@
+@use 'variables';
+
+.footer{
+    background-color: #90D4C5 ;
+    text-align: center;
+
+    &__logo{
+        width: 200px;
+    }
+
+    &__nav{
+        width: 90%;
+        max-width: 400px;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+
+        @media #{variables.$sm-laptop-device}{
+            padding: 2rem 0;
+        }
+    }
+
+    &__link{
+        color: variables.$Dark-moderate-cyan;
+        text-decoration: none;
+        padding: 1.5rem 0 3rem;
+    }
+
+    &__social{
+       display: grid;
+       grid-auto-flow: column;
+       grid-auto-columns: max-content;
+       justify-content: center;
+       align-items: center;
+       gap: 1.5rem;
+    }
+}

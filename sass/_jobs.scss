@@ -1,0 +1,63 @@
+@use 'variables';
+
+.jobs{
+  display: grid;
+  grid-auto-rows: 100vh;
+
+  @media #{variables.$tablet-device}{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 500px;
+  }
+  @media #{variables.$sm-laptop-device}{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 500px;
+  }
+
+  &__section{
+    background-image: url(/images/mobile/image-graphic-design.jpg);  
+    background-size: cover;
+    background-position: center;
+    padding: 2.5rem 1.5rem;
+    display: grid;
+    align-content: flex-end;
+    color: variables.$Dark-desaturated-cyan;
+
+    @media #{variables.$sm-laptop-device}{
+      background-image: url(/images/desktop/image-graphic-design.jpg);
+    }
+
+    &--second{
+      color: variables.$Dark-blue;
+      background-image: url(/images/mobile/image-photography.jpg);
+
+      @media #{variables.$sm-laptop-device}{
+        background-image: url(/images/desktop/image-photography.jpg);
+      }
+    }
+  }
+
+  &__name{
+    font-size: 1.7rem;
+    text-align: center;
+    @media #{variables.$sm-laptop-device}{
+      width: 70%;
+      place-self: center;
+    }
+  }
+
+  &__paragraph{
+    line-height: 1.5;
+    margin-top: 1rem;
+    text-align: center;
+    @media #{variables.$sm-laptop-device}{
+      width: 70%;
+      place-self: center;
+    }
+
+    &--second{
+      @media #{variables.$sm-laptop-device}{
+        margin-bottom: 1.3rem;
+      }
+    }
+  }
+}
